@@ -20,11 +20,16 @@
     </section>
     <section class="content-right">
         <div class="content-right_box">
-            <h2>Você sabia?</h2>
-            <div class="text color-grey">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pharetra elit felis, at tincidunt mauris congue nec. Curabitur eleifend, tortor facilisis ultricies luctus, risus lectus laoreet augue, nec imperdiet metus est non tellus. In ac convallis sem. Integer finibus urna id gravida pretium. Nullam at tellus nisi. Aliquam venenatis consequat risus, sed vehicula nulla volutpat nec. Mauris sed libero vel nunc eleifend facilisis quis ac elit. Aliquam hendrerit ac mauris eu placerat. Donec facilisis mi sed sapien pharetra, a iaculis sapien tempor. Curabitur porttitor semper elit non auctor. Etiam sed ligula velit. Mauris ex lacus, dapibus eget bibendum vel, facilisis et enim.</p>
-            </div>
-            <a href="#">saiba mais</a>
+            <?php $args = array( 'post_type' => 'voce_sabia', 'posts_per_page' => 1 ); 
+            $loop = new WP_Query( $args );
+			while ( $loop->have_posts() ) : $loop->the_post();?>
+                <h2><?php pll_e( 'Você sabia?' ); ?></h2>
+                <div class="text color-grey">
+                    <?php the_excerpt(); ?>
+                </div>
+                <a href="#"><?php pll_e( 'saiba mais' ); ?></a>
+            <?php endwhile;
+            wp_reset_postdata(); ?>
         </div>
     </section>
 </div>
