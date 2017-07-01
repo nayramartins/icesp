@@ -3,8 +3,9 @@
 ?>
 
  <?php wp_footer(); ?>
+ <?php $footer_class = is_home() ? 'home' : 'single'; ?>
 
-    <footer>
+    <footer class="<?php echo $footer_class; ?>">
         <?php if ( !is_home() ): ?>
             <ul>
                 <li><?php pll_e( 'fale com o CTO' ); ?></li>

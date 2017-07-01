@@ -4,10 +4,17 @@ footer {
     bottom: -60px;
     left: 0;
     align-items: flex-end;
-    justify-content: space-between;
     width: 100%;
     color: $grey;
     font-size: 13px;
+
+    &.home {
+        justify-content: flex-end;
+    }
+
+    &.single {
+        justify-content: space-between;
+    }
 
     ul {
         margin: 0;
