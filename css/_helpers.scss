@@ -1,0 +1,21 @@
+// DISPLAY ======================================
+
+@mixin display-flex($align: center, $justify: center) {
+    display: flex;
+    align-items: $align;
+    justify-content: $justify;
+}
+
+@mixin blueGradient() {
+    background: #ffffff; /* Old browsers */
+    background: -moz-linear-gradient(top, #ffffff 0%, #ffffff 50%, #c8e8ea 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #ffffff 0%,#ffffff 50%,#c8e8ea 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #ffffff 0%,#ffffff 50%,#c8e8ea 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#c8e8ea',GradientType=0 ); /* IE6-9 */
+}
+
+@mixin shadow() {
+    -webkit-box-shadow: inset -5px -7px 13px -1px rgba(112,112,112,1);
+    -moz-box-shadow: inset -5px -7px 13px -1px rgba(112,112,112,1);
+    box-shadow: inset -5px -7px 13px -1px rgba(112,112,112,1);
+}
