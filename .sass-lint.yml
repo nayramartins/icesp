@@ -15,10 +15,12 @@ rules:
   single-line-per-selector: 2
 
   # Disallows
+  no-color-hex: 2
+  no-color-keywords: 2
   no-color-literals: 2
   no-debug: 1
   no-ids: 0
-  no-important: 1
+  no-important: 0
   no-duplicate-properties: 2
   no-empty-rulesets: 1
   no-invalid-hex: 2
@@ -28,6 +30,7 @@ rules:
   no-trailing-zero: 1
   no-vendor-prefixes: 0
   no-warn: 1
+  no-transition-all: 0
 
   # Nesting
   force-attribute-nesting: 2
@@ -75,11 +78,17 @@ rules:
   nesting-depth:
     - 1
     -
-      max-depth: 4
+      max-depth: 5
   property-sort-order:
     - 2
     -
       order: 'smacss'
+  variable-for-property:
+    - 2
+    -
+      'properties':
+      - 'color'
+      - 'background-color'
   zero-unit: 2
 
   # Inner Spacing

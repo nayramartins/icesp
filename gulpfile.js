@@ -39,7 +39,7 @@ gulp.task('sasslint', () => {
       options: {
         formatter: 'stylish'
       },
-      files: {ignore: cssFolder + '/_variables.scss'},
+      files: {ignore: [cssFolder + '/_variables.scss', cssFolder + '/_helpers.scss'] },
       config: '.sass-lint.yml'
     }))
     .pipe(sasslint.format())

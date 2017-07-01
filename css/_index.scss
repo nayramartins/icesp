@@ -9,6 +9,9 @@ h2 {
 }
 
 .content-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     min-width: 73.2%;
     margin-right: 10px;
 
@@ -32,7 +35,7 @@ h2 {
         @include shadow;
         max-height: 210px;
         margin: 0;
-        padding: 0;
+        padding: 0 0.5rem;
         overflow: auto;
 
         li {
@@ -78,5 +81,11 @@ h2 {
         padding-bottom: 15px;
         border-bottom: 1px solid $greenDark;
         text-align: center;
+    }
+}
+
+.content-logo {
+    img {
+        width: 100%;
     }
 }
