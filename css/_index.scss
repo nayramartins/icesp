@@ -48,6 +48,11 @@ h2 {
             &:last-child {
                 border-bottom: none;
             }
+
+            a {
+                color: $black;
+                text-decoration: none;
+            }
         }
     }
 }

@@ -20,10 +20,7 @@
             </div>
             <div class="header-right">
                 <div class="header-right_search">
-                    <div class="search-container">
-                        <input type="text" class="search-input" placeholder="<?php pll_e( 'BUSCAR' ); ?>" />
-                        <button class="search-button"></button>
-                    </div>
+                    <?php get_search_form(); ?>
                 </div>
                 <?php if (function_exists(main_menu())) main_menu(); ?>
                 <!--<nav class="nav">

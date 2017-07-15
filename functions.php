@@ -293,7 +293,7 @@ add_action('init', 'type_post_eventos');
             'has_archive' => true,
             'hierarchical' => false,
             'menu_position' => null,
-            'supports' => array('title')
+            'supports' => array('title','editor','thumbnail','comments', 'excerpt', 'custom-fields', 'revisions', 'trackbacks')
           );
 
 register_post_type( 'eventos' , $args );

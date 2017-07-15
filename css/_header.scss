@@ -55,9 +55,14 @@
                 height: 30px;
                 margin: 15px 10px 0 0;
                 box-sizing: border-box;
+
+                form {
+                    margin: 0;
+                }
             }
 
             .search-input {
+                height: 30px;
                 padding: 0 10px;
                 border: none;
                 border-radius: 3px;

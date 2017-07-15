@@ -9,12 +9,13 @@
         <div class="content-left_box">
             <h2><?php pll_e( 'eventos' ); ?></h2>
             <ul class="event-box">
-                <li><span class="date">01/01/2017 - </span> primeiro evento do mês de janeiro</li>
-                <li><span class="date">01/01/2017 - </span> primeiro evento do mês de janeiro</li>
-                <li><span class="date">01/01/2017 - </span> primeiro evento do mês de janeiro</li>
-                <li><span class="date">01/01/2017 - </span> primeiro evento do mês de janeiro</li>
-                <li><span class="date">01/01/2017 - </span> primeiro evento do mês de janeiro</li>
-                <li><span class="date">01/01/2017 - </span> primeiro evento do mês de janeiro</li>
+                <?php $args = array( 'post_type' => 'eventos', 'posts_per_page' => 6 );
+                $loop = new WP_Query( $args );
+                while ( $loop->have_posts() ) : $loop->the_post(); 
+                $date = get_field('data_do_evento'); 
+                ?>
+                    <li><a href="<?php the_permalink(); ?>"><span class="date"><?php echo $date; ?> - </span> <?php the_title(); ?></a></li>
+                <?php endwhile; ?>
             </ul>
         </div>
     </section>
@@ -35,11 +36,5 @@
 </div>
 <section class="content-logo">
     <img src="<?php echo $logos; ?>" alt="" />
-    <!--<ul>
-        <li>logo</li>
-        <li>logo</li>
-        <li>logo</li>
-        <li>logo</li>
-    </ul>-->
 </section>
 <?php include 'footer.php' ?>
