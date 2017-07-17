@@ -73,11 +73,13 @@ h2 {
             text-align: left;
         }
 
-        a {
+        a,
+        span {
             color: $greenDark;
             font-size: 15px;
             font-weight: 600;
             text-transform: uppercase;
+            cursor: pointer;
         }
     }
 
@@ -92,5 +94,47 @@ h2 {
 .content-logo {
     img {
         width: 100%;
+    }
+}
+
+.modal-voce-sabia {
+    display: none;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background: $blackOpacity;
+
+
+    &.active {
+        display: flex;
+    }
+
+    .modal-container {
+        position: relative;
+        width: 50%;
+        margin: auto;
+        padding: 50px;
+        border-radius: 5px;
+        background: $white;
+        box-sizing: border-box;
+
+        .close-button {
+            position: absolute;
+            top: 5px;
+            right: 15px;
+            color: $greyMediumLight;
+            font-size: 30px;
+            cursor: pointer;
+        }
+
+        h2 {
+            border-bottom: 1px solid;
+        }
+
+        p {
+            color: $greyMediumLight;
+            font-size: 13px;
+        }
     }
 }

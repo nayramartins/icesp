@@ -1,0 +1,21 @@
+.sidebar {
+    width: 240px;
+    padding-right: 40px;
+    box-sizing: border-box;
+
+    ul {
+        margin: 0;
+        padding: 0;
+        color: $white;
+        list-style: none;
+
+        li {
+            &:first-child {
+                padding: 8px 20px;
+                background: $blue;
+                font-size: 16px;
+                text-transform: uppercase;
+            }
+        }
+    }
+}

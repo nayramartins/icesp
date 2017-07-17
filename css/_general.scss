@@ -18,3 +18,16 @@ main {
     border-radius: 5px;
     background-color: $white;
 }
+
+.breadcrumb {
+    margin: 15px 0 20px 15px;
+    color: $greenDark;
+    font-size: 13px;
+    font-weight: 600;
+
+    a {
+        color: $greenDark;
+        font-weight: 400;
+        text-decoration: none;
+    }
+}

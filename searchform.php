@@ -4,7 +4,7 @@
         <input class="search-input" type="text" name="s" placeholder="<?php pll_e( 'BUSCAR' ); ?>" />
     </form>
     <button type="submit" class="search-button">
-        <img class="search-button" src="<?php bloginfo('url'); ?>/wp-content/themes/melhorespraticas/images/melhores_praticas-search.png" width="23" height="20" alt="" onclick="handleSubmit()">
+        <img class="search-image" src="<?php bloginfo('url'); ?>/wp-content/themes/icesp/images/icesp-lupa.png" width="23" height="20" alt="" onclick="handleSubmit()">
     </button>
 </div>
 

@@ -15,8 +15,10 @@
         </ul>
         <header class="header">
             <div class="header-left">
-                <h1><img src="<?php echo $logo; ?>" alt=""></h1>
-                <h2><?php pll_e( 'Ensino e pesquisa' ); ?></h2>
+                <a href="<?php bloginfo('url'); ?>">
+                    <h1><img src="<?php echo $logo; ?>" alt=""></h1>
+                    <h2><?php pll_e( 'Ensino e pesquisa' ); ?></h2>
+                </a>
             </div>
             <div class="header-right">
                 <div class="header-right_search">
