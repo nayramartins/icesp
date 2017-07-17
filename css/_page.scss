@@ -60,4 +60,19 @@
     &--featured-image {
         margin: 0 0 20px;
     }
+
+    pre {
+        width: 1em;
+        height: 10px;
+        border-bottom: 10px solid $blueLight;
+        font-family: OpenSans;
+    }
+}
+
+.comissao-content {
+    display: none;
+
+    &-active {
+        display: block;
+    }
 }
