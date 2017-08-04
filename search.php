@@ -7,8 +7,19 @@
     </div>
 </div>
 <?php if (have_posts()): ?>
+    <ul class="search-result--content">
     <?php while ( have_posts() ) : the_post(); ?>
-<?php endwhile; endif; ?>
+        <li>
+            <span class="search-text">
+                <a href="<?php the_permalink(); ?>"><p class="title"><?php the_title(); ?></p></a>
+            </span>
+            <p class="text-content"><?php the_excerpt(); ?></p>
+        </li>
+    <?php endwhile; ?>
+    </ul>
+<?php else: ?>
+    <div> <?php pll_e( 'nenhum post' ); ?></div>    
+<?php endif; ?>
 <section class="content-logo">
     <img src="<?php echo $logos; ?>" alt="" />
 </section>
