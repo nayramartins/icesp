@@ -19,6 +19,7 @@
             ?>
             <li><a href="<?php the_permalink(); ?>"><span class="date"><?php echo $date; ?> - </span> <?php the_title(); ?></a></li>
         <?php endwhile; ?>
+        <?php wp_reset_postdata(); ?>
     </ul>
 </div>
 <div class="eventos-content page--content">
