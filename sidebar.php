@@ -4,11 +4,20 @@ $title = get_the_title();
 
 <sidebar class="sidebar">
     <ul>
-        <li><?php echo the_title(); ?></li>
-        <?php if (get_post_field( 'post_name', get_post() ) == 'comissao'): ?>
+        <?php if ( !get_post_type()  == 'post') : ?>
+            <li><?php echo the_title(); ?></li>
+        <?php endif; ?>
+        <?php if ( get_post_field( 'post_name', get_post() ) == 'comissao'): ?>
             <li class="comissao-selector-active ccp" onClick="comissaoClick('ccp')">CCP</li>
             <li class="comissao-selector cep" onClick="comissaoClick('cep')">CEP</li>
             <li class="comissao-selector ceua" onClick="comissaoClick('ceua')">CEUA</li>
+
+        <?php elseif ( get_post_type()  == 'post') : ?>
+            <li><?php pll_e( 'Pesquisa' ); ?></li>
+            <?php $post1 = get_post(128); ?>
+            <?php $post2 = get_post(130); ?>
+            <li><a href="<?php echo get_permalink(128); ?>"><?php pll_e( $post1->post_title ); ?></a></li>
+            <li><a href="<?php echo get_permalink(130); ?>"><?php pll_e( $post2->post_title ); ?></a></li>
         <?php endif; ?>
     </ul>
 </sidebar>
