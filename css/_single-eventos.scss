@@ -1,0 +1,22 @@
+.eventos {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    &-title {
+        margin-bottom: 0;
+        color: $greenDarker;
+        font-size: 22px;
+    }
+}
+
+.sidebar {
+    .event-box {
+        li {
+            a {
+                color: $blue;
+                text-decoration: none;
+            }
+        }
+    }
+}
