@@ -585,3 +585,62 @@ function woo_custom_add_to_cart( $cart_item_data ) {
     // Do nothing with the data and return
     return $cart_item_data;
 }
+
+
+// CUSTOM TAXONOMY
+
+add_action( 'init', 'create_quadrante_hierarchical_taxonomy', 0 );
+
+function create_quadrante_hierarchical_taxonomy() {
+
+  $labels = array(
+    'name' => _x( 'Quadrante', 'taxonomy general name' ),
+    'singular_name' => _x( 'Quadrante', 'taxonomy singular name' ),
+    'search_items' =>  __( 'Procurar Quadrante' ),
+    'all_items' => __( 'Todos os Quadrantes' ),
+    'edit_item' => __( 'Editar Quadrante' ),
+    'update_item' => __( 'Update Topic' ),
+    'add_new_item' => __( 'Adicionar novo quadrante' ),
+    'new_item_name' => __( 'Quadrante' ),
+    'menu_name' => __( 'Quadrante' ),
+  );
+
+  register_taxonomy('quadrante',array('post'), array(
+    'hierarchical' => false,
+    'labels' => $labels,
+    'show_ui' => true,
+    'show_admin_column' => true,
+    'query_var' => true,
+    'rewrite' => array(
+      'slug' => 'quadrante',
+      'with_front' => false ),
+  ));
+}
+
+add_action( 'init', 'create_venn_hierarchical_taxonomy', 0 );
+
+function create_venn_hierarchical_taxonomy() {
+
+  $labels = array(
+    'name' => _x( 'Diagrama de Venn', 'taxonomy general name' ),
+    'singular_name' => _x( 'Diagrama de Venn', 'taxonomy singular name' ),
+    'search_items' =>  __( 'Procurar Diagrama de Venn' ),
+    'all_items' => __( 'Todos os itens em Diagrama de Venn' ),
+    'edit_item' => __( 'Editar Diagrama de Venn' ),
+    'update_item' => __( 'Update Topic' ),
+    'add_new_item' => __( 'Adicionar novo item ao Diagrama de Venn' ),
+    'new_item_name' => __( 'Diagrama de Venn' ),
+    'menu_name' => __( 'Diagrama de Venn' ),
+  );
+
+  register_taxonomy('venn',array('post'), array(
+    'hierarchical' => false,
+    'labels' => $labels,
+    'show_ui' => true,
+    'show_admin_column' => true,
+    'query_var' => true,
+    'rewrite' => array(
+      'slug' => 'venn',
+      'with_front' => false ),
+  ));
+}
