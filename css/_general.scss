@@ -31,3 +31,39 @@ main {
         text-decoration: none;
     }
 }
+
+.subtitle-grey {
+    margin-bottom: 0;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.upper-title {
+    margin-top: 0;
+    margin-bottom: 25px;
+    font-size: 17px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.owl-carousel {
+    .owl-nav {
+        position: absolute;
+        top: 15px;
+        width: 100%;
+
+        .owl-prev,
+        .owl-next {
+            position: absolute;
+            width: 15px;
+        }
+
+        .owl-prev {
+            left: 0;
+        }
+
+        .owl-next {
+            right: 0;
+        }
+    }
+}

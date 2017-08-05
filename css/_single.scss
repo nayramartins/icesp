@@ -1,7 +1,150 @@
 .arquivos {
     display: none;
+    position: relative;
 
     &.active {
-        display: block;
+        display: flex;
+        flex-direction: column;
+        padding-top: 45px;
+        border-top: 1px solid $greyBorder;
+    }
+
+    a {
+        position: relative;
+        margin-left: 10px;
+        padding-left: 15px;
+
+        &::after {
+            position: absolute;
+            top: 5px;
+            left: 0;
+            width: 0;
+            height: 0;
+            border-top: 5px solid transparent;
+            border-bottom: 5px solid transparent;
+            border-left: 5px solid $greenLight;
+            content: '';
+        }
+    }
+}
+
+.cl-title {
+    display: flex;
+    flex-direction: column;
+    color: $grey;
+    font-size: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+
+    .cl-link {
+        color: $greenDarker;
+        font-size: 12px;
+        font-style: normal;
+        text-decoration: underline;
+        text-transform: uppercase;
+    }
+}
+
+.pesquisador-foto {
+    position: relative;
+    margin: -30px 0 30px 100px;
+    float: right;
+
+    .foto {
+        width: 215px;
+        height: 230px;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .badge-content {
+        display: flex;
+        position: absolute;
+        bottom: -12px;
+        left: -40px;
+        align-items: center;
+        justify-content: center;
+        width: 100px;
+        height: 100px;
+    }
+
+    .badge {
+        position: absolute;
+        margin: 0;
+        border-radius: 100%;
+        color: $white;
+        font-size: 9.8px;
+        text-align: center;
+
+        &-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    }
+}
+
+.cl-content {
+    margin-bottom: 45px;
+}
+
+.cl-group {
+    display: flex;
+    flex-direction: column;
+    padding: 45px 0;
+    border-top: 1px solid $greyBorder;
+
+    a {
+        color: $grey;
+        font-size: 13px;
+        font-style: normal;
+        text-decoration: underline;
+    }
+
+    .membros {
+        position: relative;
+        margin-bottom: 25px;
+        margin-left: 10px;
+        padding-left: 15px;
+
+        &::after {
+            position: absolute;
+            top: 5px;
+            left: 0;
+            width: 0;
+            height: 0;
+            border-top: 5px solid transparent;
+            border-bottom: 5px solid transparent;
+            border-left: 5px solid $greenLight;
+            content: '';
+        }
+    }
+
+    &:last-of-type {
+        border-top: none;
+    }
+}
+
+.cl-diretorios {
+    display: flex;
+
+    .diretorios {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 60px;
+        margin: 0 auto;
+        cursor: pointer;
+
+        img {
+            width: 100%;
+            height: 100%;
+            margin-bottom: 15px;
+            object-fit: contain;
+        }
     }
 }

@@ -1,6 +1,6 @@
 <?php
 /**** Pages template file ****/
- get_header(); ?>
+get_header(); ?>
 
 <div class="breadcrumb">
     <div class="container">
@@ -12,14 +12,14 @@
     <div class="page--content">
         <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
             <h1 class="page--title"><?php echo get_field('titulo_da_pagina'); ?></h1>
-            <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' ); 
+            <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' );
             if ($image) : ?>
-                <img class="page--featured-image" src="<?php echo $image[0]; ?>" alt="" class="image" />
-            <?php 
+            <img class="page--featured-image" src="<?php echo $image[0]; ?>" alt="" class="image" />
+            <?php
             endif;
             the_content();
-        endwhile; endif; ?>
+            endwhile; endif; ?>
     </div>
 </section>
 
-  <?php get_footer(); ?>
+<?php get_footer(); ?>
