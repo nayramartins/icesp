@@ -17,6 +17,11 @@
             font-size: 14px;
             cursor: pointer;
 
+            a {
+                color: $blue;
+                text-decoration: none;
+            }
+
             &:first-child {
                 background: $blue;
                 color: $white;
