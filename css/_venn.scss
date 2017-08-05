@@ -7,6 +7,14 @@
     h2 {
         margin: 0;
     }
+
+    .nomes {
+        display: none;
+
+        &.active {
+            display: block;
+        }
+    }
 }
 
 .venn-content {
