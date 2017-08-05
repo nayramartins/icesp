@@ -21,7 +21,7 @@
                     <?php the_field('area_esquerda'); ?>
                     <span ><?php the_field('subtitulo_area_esquerda'); ?></span>
                     <div class="nomes" id="area_esquerda">
-                        <?php 
+                        <?php
                             $term = get_field('area_esquerda');
                             $args = array(
                             'tax_query' => array(
@@ -43,7 +43,7 @@
                     <?php the_field('area_superior'); ?>
                     <span ><?php the_field('subtitulo_area_superior'); ?></span>
                     <div class="nomes" id="area_superior">
-                        <?php 
+                        <?php
                             $term = get_field('area_superior');
                             $args = array(
                             'tax_query' => array(
@@ -57,6 +57,7 @@
                             $query = new WP_Query($args);
                             if ( $query -> have_posts() ) : while ( $query -> have_posts() ) : $query -> the_post(); ?>
                                 <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                                <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                             <?php endwhile; endif; ?>
                             <?php wp_reset_postdata(); ?>
                     </div>
@@ -64,7 +65,7 @@
                 <div class="area_central" onmouseover="showContent('area_central', 'over');" onmouseleave="showContent('area_central', 'leave');">
                     <?php the_field('area_central'); ?>
                     <div class="nomes" id="area_central">
-                        <?php 
+                        <?php
                             $term = get_field('area_central');
                             $args = array(
                             'tax_query' => array(
@@ -86,7 +87,7 @@
                     <?php the_field('area_inferior'); ?>
                     <span ><?php the_field('subtitulo_area_inferior'); ?></span>
                     <div class="nomes" id="area_inferior">
-                        <?php 
+                        <?php
                             $term = get_field('area_inferior');
                             $args = array(
                             'tax_query' => array(
@@ -118,9 +119,18 @@
         var target = document.getElementById(area);
         if (action === 'over') {
             target.classList.add('active');
-        }
+            var element = document.getElementsByClassName(area);
+            var elementRef = element[0].getBoundingClientRect();
+            elementTop = elementRef.top - target.getBoundingClientRect().height;
+            elementLeft = (elementRef.left - (target.getBoundingClientRect().width / 2)) + (elementRef.width / 2);
+            target.style.top = elementTop + 'px';
+            target.style.left = elementLeft + 'px';
+  }
         if (action === 'leave') {
             target.classList.remove('active');
         }
+
+
+        console.log(elementTop);
     };
 </script>

@@ -10,9 +10,34 @@
 
     .nomes {
         display: none;
+        position: fixed;
+        flex-direction: column;
+        align-items: center;
+        max-width: 350px;
+        padding: 40px;
+        border-radius: 5px;
+        background: $blue;
+        z-index: 99;
+
+        a {
+            width: 100%;
+            margin: 5px 0;
+            color: $white;
+            font-size: 13px;
+            text-align: left;
+        }
+
+        &::after {
+            position: absolute;
+            bottom: -15px;
+            border-top: 15px solid $blue;
+            border-right: 15px solid transparent;
+            border-left: 15px solid transparent;
+            content: '';
+        }
 
         &.active {
-            display: block;
+            display: flex;
         }
     }
 }
