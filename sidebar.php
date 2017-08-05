@@ -4,7 +4,7 @@ $title = get_the_title();
 
 <sidebar class="sidebar">
     <ul>
-        <?php if ( get_post_type()  != 'post' && get_post_field( 'post_name', get_post() ) != 'quem-somos-na-usp') : ?>
+        <?php if ( get_post_type()  != 'post' && get_post_field( 'post_name', get_post() ) != 'quem-somos-na-usp' && get_post_field( 'post_name', get_post() ) != 'programa-de-pesquisa') : ?>
             <li><?php echo the_title(); ?></li>
         <?php endif; ?>
         <?php if ( get_post_field( 'post_name', get_post() ) == 'comissao' ): ?>
@@ -12,7 +12,7 @@ $title = get_the_title();
             <li class="comissao-selector cep" onClick="comissaoClick('cep')">CEP</li>
             <li class="comissao-selector ceua" onClick="comissaoClick('ceua')">CEUA</li>
 
-        <?php elseif ( get_post_type()  == 'post' || get_post_field( 'post_name', get_post() ) == 'quem-somos-na-usp' ) : ?>
+        <?php elseif ( get_post_type()  == 'post' || get_post_field( 'post_name', get_post() ) == 'quem-somos-na-usp' || get_post_field( 'post_name', get_post() ) == 'programa-de-pesquisa' ) : ?>
             <li><?php pll_e( 'Pesquisa' ); ?></li>
             <?php $post1 = get_post(128); ?>
             <?php $post2 = get_post(130); ?>
