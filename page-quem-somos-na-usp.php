@@ -20,91 +20,89 @@
                 <div class="area_esquerda" onmouseover="showContent('area_esquerda', 'over');" onmouseleave="showContent('area_esquerda', 'leave');">
                     <?php the_field('area_esquerda'); ?>
                     <span ><?php the_field('subtitulo_area_esquerda'); ?></span>
+                    <div class="nomes" id="area_esquerda">
+                        <?php 
+                            $term = get_field('area_esquerda');
+                            $args = array(
+                            'tax_query' => array(
+                                array(
+                                    'taxonomy' => 'venn',
+                                    'field' => 'name',
+                                    'terms' => $term
+                                    )
+                                )
+                            );
+                            $query = new WP_Query($args);
+                            if ( $query -> have_posts() ) : while ( $query -> have_posts() ) : $query -> the_post(); ?>
+                                <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                            <?php endwhile; endif; ?>
+                            <?php wp_reset_postdata(); ?>
+                    </div>
                 </div>
                 <div class="area_superior" onmouseover="showContent('area_superior', 'over');" onmouseleave="showContent('area_superior', 'leave');">
                     <?php the_field('area_superior'); ?>
                     <span ><?php the_field('subtitulo_area_superior'); ?></span>
+                    <div class="nomes" id="area_superior">
+                        <?php 
+                            $term = get_field('area_superior');
+                            $args = array(
+                            'tax_query' => array(
+                                array(
+                                    'taxonomy' => 'venn',
+                                    'field' => 'name',
+                                    'terms' => $term
+                                    )
+                                )
+                            );
+                            $query = new WP_Query($args);
+                            if ( $query -> have_posts() ) : while ( $query -> have_posts() ) : $query -> the_post(); ?>
+                                <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                            <?php endwhile; endif; ?>
+                            <?php wp_reset_postdata(); ?>
+                    </div>
                 </div>
-                <span class="area_central" onmouseover="showContent('area_central', 'over');" onmouseleave="showContent('area_central', 'leave');"><?php the_field('area_central'); ?></span>
+                <div class="area_central" onmouseover="showContent('area_central', 'over');" onmouseleave="showContent('area_central', 'leave');">
+                    <?php the_field('area_central'); ?>
+                    <div class="nomes" id="area_central">
+                        <?php 
+                            $term = get_field('area_central');
+                            $args = array(
+                            'tax_query' => array(
+                                array(
+                                    'taxonomy' => 'venn',
+                                    'field' => 'name',
+                                    'terms' => $term
+                                    )
+                                )
+                            );
+                            $query = new WP_Query($args);
+                            if ( $query -> have_posts() ) : while ( $query -> have_posts() ) : $query -> the_post(); ?>
+                                <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                            <?php endwhile; endif; ?>
+                            <?php wp_reset_postdata(); ?>
+                    </div>
+                </div>
                 <div class="area_inferior" onmouseover="showContent('area_inferior', 'over');" onmouseleave="showContent('area_inferior', 'leave');">
                     <?php the_field('area_inferior'); ?>
                     <span ><?php the_field('subtitulo_area_inferior'); ?></span>
-                </div>
-
-                <div class="nomes" id="area_esquerda">
-                    <?php 
-                        $term = get_field('area_esquerda');
-                        $args = array(
-                        'tax_query' => array(
-                            array(
-                                'taxonomy' => 'venn',
-                                'field' => 'name',
-                                'terms' => $term
+                    <div class="nomes" id="area_inferior">
+                        <?php 
+                            $term = get_field('area_inferior');
+                            $args = array(
+                            'tax_query' => array(
+                                array(
+                                    'taxonomy' => 'venn',
+                                    'field' => 'name',
+                                    'terms' => $term
+                                    )
                                 )
-                            )
-                        );
-                        $query = new WP_Query($args);
-                        if ( $query -> have_posts() ) : while ( $query -> have_posts() ) : $query -> the_post(); ?>
-                            <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-                        <?php endwhile; endif; ?>
-                        <?php wp_reset_postdata(); ?>
-                </div>
-
-                <div class="nomes" id="area_superior">
-                    <?php 
-                        $term = get_field('area_superior');
-                        $args = array(
-                        'tax_query' => array(
-                            array(
-                                'taxonomy' => 'venn',
-                                'field' => 'name',
-                                'terms' => $term
-                                )
-                            )
-                        );
-                        $query = new WP_Query($args);
-                        if ( $query -> have_posts() ) : while ( $query -> have_posts() ) : $query -> the_post(); ?>
-                            <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-                        <?php endwhile; endif; ?>
-                        <?php wp_reset_postdata(); ?>
-                </div>
-
-                <div class="nomes" id="area_central">
-                    <?php 
-                        $term = get_field('area_central');
-                        $args = array(
-                        'tax_query' => array(
-                            array(
-                                'taxonomy' => 'venn',
-                                'field' => 'name',
-                                'terms' => $term
-                                )
-                            )
-                        );
-                        $query = new WP_Query($args);
-                        if ( $query -> have_posts() ) : while ( $query -> have_posts() ) : $query -> the_post(); ?>
-                            <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-                        <?php endwhile; endif; ?>
-                        <?php wp_reset_postdata(); ?>
-                </div>
-
-                <div class="nomes" id="area_inferior">
-                    <?php 
-                        $term = get_field('area_inferior');
-                        $args = array(
-                        'tax_query' => array(
-                            array(
-                                'taxonomy' => 'venn',
-                                'field' => 'name',
-                                'terms' => $term
-                                )
-                            )
-                        );
-                        $query = new WP_Query($args);
-                        if ( $query -> have_posts() ) : while ( $query -> have_posts() ) : $query -> the_post(); ?>
-                            <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-                        <?php endwhile; endif; ?>
-                        <?php wp_reset_postdata(); ?>
+                            );
+                            $query = new WP_Query($args);
+                            if ( $query -> have_posts() ) : while ( $query -> have_posts() ) : $query -> the_post(); ?>
+                                <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                            <?php endwhile; endif; ?>
+                            <?php wp_reset_postdata(); ?>
+                    </div>
                 </div>
             </div>
         </div>
