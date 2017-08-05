@@ -644,3 +644,10 @@ function create_venn_hierarchical_taxonomy() {
       'with_front' => false ),
   ));
 }
+
+function customBlogUrl() {
+    $url = get_home_url();
+    $parseUrl = parse_url($url);
+    $path = dirname($parseUrl["path"]);
+    return 'http://' . $parseUrl["host"] . $path . '/wp-content/themes/icesp';
+}
