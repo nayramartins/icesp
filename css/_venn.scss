@@ -3,13 +3,17 @@
     flex-direction: column;
     flex-wrap: wrap;
     width: 75%;
+
+    h2 {
+        margin: 0;
+    }
 }
 
 .venn-content {
     position: relative;
     width: 95%;
     height: 650px;
-    margin: 15px 0 35px;
+    margin: 35px 0;
     background: $blueLighter;
     color: $white;
     font-size: 20px;
@@ -65,6 +69,29 @@
         left: 50%;
         flex-direction: column;
         width: 145px;
+        text-align: center;
+
+        span {
+            font-size: 12px;
+            font-style: italic;
+            font-weight: 100;
+            opacity: 0.5;
+        }
+    }
+
+    .area_central {
+        position: absolute;
+        top: 47.5%;
+        left: 54%;
+    }
+
+    .area_inferior {
+        display: flex;
+        position: absolute;
+        top: 60%;
+        left: 52.5%;
+        flex-direction: column;
+        width: 105px;
         text-align: center;
 
         span {

@@ -25,6 +25,11 @@
                     <?php the_field('area_superior'); ?>
                     <span ><?php the_field('subtitulo_area_superior'); ?></span>
                 </div>
+                <span class="area_central"><?php the_field('area_central'); ?></span>
+                <div class="area_inferior">
+                    <?php the_field('area_inferior'); ?>
+                    <span ><?php the_field('subtitulo_area_inferior'); ?></span>
+                </div>
             </div>
         </div>
     <?php endwhile; endif; ?>
