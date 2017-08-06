@@ -15,25 +15,25 @@
             <h2><?php the_title(); ?> </h2>
             <div class="quadrante">
                 <div class="quadrante-item primeiro">
-                    <a href="/pt/quadrante/pesquisa-em-humanos">
+                    <a href="<?php customBlogUrl(); ?>/en/quadrante/pesquisa-em-humanos">
                         <p><?php the_field('label_primeiro_quadrante'); ?></p>
-                        <img src="<?php the_field('imagem_primeiro_quadrante'); ?>" />
+                        <img src="<?php the_field('imagem_primeiro_quadrante_en'); ?>" />
                     </a>
                 </div>
                 <div class="quadrante-item segundo">
-                    <a href="/pt/quadrante/inovacao-terapeutica-e-diagnostico">
+                    <a href="<?php customBlogUrl(); ?>/en/quadrante/inovacao-terapeutica-e-diagnostico">
                         <p><?php the_field('label_segundo_quadrante'); ?></p>
                         <img src="<?php the_field('imagem_segundo_quadrante'); ?>" />
                     </a>
                 </div>
                 <div class="quadrante-item terceiro">
-                    <a href="/pt/quadrante/epidemiologia-e-prevencao">
+                    <a href="<?php customBlogUrl(); ?>/en/quadrante/epidemiologia-e-prevencao">
                         <p><?php the_field('label_terceiro_quadrante'); ?></p>
                         <img src="<?php the_field('imagem_terceiro_quadrante'); ?>" />
                     </a>
                 </div>
                 <div class="quadrante-item quarto">
-                    <a href="/pt/quadrante/pesquisa-em-humanos">
+                    <a href="<?php customBlogUrl(); ?>/en/quadrante/pesquisa-em-humanos">
                         <p><?php the_field('label_quarto_quadrante'); ?></p>
                         <img src="<?php the_field('imagem_quarto_quadrante'); ?>" />
                     </a>

@@ -4,15 +4,24 @@ $title = get_the_title();
 
 <sidebar class="sidebar">
     <ul>
-        <?php if ( get_post_type()  != 'post' && get_post_field( 'post_name', get_post() ) != 'quem-somos-na-usp' && get_post_field( 'post_name', get_post() ) != 'programa-de-pesquisa') : ?>
+        <?php if ( get_post_type()  != 'post' && 
+        get_post_field( 'post_name', get_post() ) != 'quem-somos-na-usp' && 
+        get_post_field( 'post_name', get_post() ) != 'who-we-are-on-usp' && 
+        get_post_field( 'post_name', get_post() ) != 'programa-de-pesquisa' &&
+        get_post_field( 'post_name', get_post() ) != 'research-program') : ?>
             <li><?php echo the_title(); ?></li>
         <?php endif; ?>
-        <?php if ( get_post_field( 'post_name', get_post() ) == 'comissao' ): ?>
+        <?php if ( get_post_field( 'post_name', get_post() ) == 'comissao' ||  get_post_field( 'post_name', get_post() ) == 'committees'): ?>
             <li class="comissao-selector-active ccp" onClick="comissaoClick('ccp')">CCP</li>
             <li class="comissao-selector cep" onClick="comissaoClick('cep')">CEP</li>
             <li class="comissao-selector ceua" onClick="comissaoClick('ceua')">CEUA</li>
 
-        <?php elseif ( get_post_type()  == 'post' || get_post_field( 'post_name', get_post() ) == 'quem-somos-na-usp' || get_post_field( 'post_name', get_post() ) == 'programa-de-pesquisa' ) : ?>
+        <?php elseif ( get_post_type()  == 'post' || 
+            get_post_field( 'post_name', get_post() ) == 'quem-somos-na-usp' || 
+            get_post_field( 'post_name', get_post() ) == 'programa-de-pesquisa' ||
+            get_post_field( 'post_name', get_post() ) == 'who-we-are-on-usp' || 
+            get_post_field( 'post_name', get_post() ) == 'research-program' ) : 
+        ?>
             <li><?php pll_e( 'Pesquisa' ); ?></li>
             <?php $post1 = get_post(128); ?>
             <?php $post2 = get_post(130); ?>

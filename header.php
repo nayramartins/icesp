@@ -52,17 +52,19 @@
         </ul>
         <header class="header">
             <div class="header-left">
-                <a href="<?php bloginfo('url'); ?>">
+                <a href="http://www.icesp.org.br">
                     <h1><img src="<?php echo $logo; ?>" alt=""></h1>
-                    <h2><?php pll_e( 'Ensino e pesquisa' ); ?></h2>
+                </a>
+                <a href="<?php bloginfo('url'); ?>">
+                    <h2><?php pll_e( 'Ensino e Pesquisa' ); ?></h2>
                 </a>
             </div>
             <div class="header-right">
                 <div class="header-right_search">
                     <?php get_search_form(); ?>
                 </div>
-                <?php if (function_exists(main_menu())) main_menu(); ?>
-                <!--<nav class="nav">
+                <?php if (function_exists(main_menu())) main_menu(); ?>               
+                 <!--<nav class="nav">
                     <ul>
                         <li><a href="#">sobre nós</a></li>
                         <li><a href="#">pesquisa</a></li>
@@ -71,5 +73,5 @@
                         <li><a href="#">core facilities</a></li>
                     </ul>
                 </nav>-->
-            </div>
-        </header>
+                    </div>
+                </header>
