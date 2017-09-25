@@ -18,7 +18,12 @@
                 <span class="area-externa"><?php the_field('area_externa'); ?></span>
                 <span class="sistema"><?php the_field('sistema'); ?></span>
                 <div class="area_esquerda" onmouseover="showContent('area_esquerda', 'over');" onmouseleave="showContent('area_esquerda', 'leave');">
-                    <?php the_field('area_esquerda'); ?>
+                    <?php 
+                        $esquerda_id = get_field('pagina_area_esquerda');
+                        $post_esquerda = get_post($esquerda_id); 
+                        $slug = $post_esquerda->post_name;
+                    ?>
+                    <a href="<?php bloginfo('url'); ?>/<?php echo $slug;?>"><?php the_field('area_esquerda'); ?></a>
                     <span ><?php the_field('subtitulo_area_esquerda'); ?></span>
                     <div class="nomes" id="area_esquerda">
                         <?php
@@ -40,7 +45,12 @@
                     </div>
                 </div>
                 <div class="area_superior" onmouseover="showContent('area_superior', 'over');" onmouseleave="showContent('area_superior', 'leave');">
-                    <?php the_field('area_superior'); ?>
+                    <?php 
+                        $superior_id = get_field('pagina_area_superior');
+                        $post_superior = get_post($superior_id); 
+                        $slug = $post_superior->post_name;
+                    ?>
+                    <a href="<?php bloginfo('url'); ?>/<?php echo $slug;?>"> <?php the_field('area_superior'); ?></a>
                     <span ><?php the_field('subtitulo_area_superior'); ?></span>
                     <div class="nomes" id="area_superior">
                         <?php
@@ -62,7 +72,12 @@
                     </div>
                 </div>
                 <div class="area_central" onmouseover="showContent('area_central', 'over');" onmouseleave="showContent('area_central', 'leave');">
-                    <?php the_field('area_central'); ?>
+                    <?php 
+                        $central_id = get_field('pagina_area_central');
+                        $post_central = get_post($central_id); 
+                        $slug = $post_central->post_name;
+                    ?>
+                    <a href="<?php bloginfo('url'); ?>/<?php echo $slug;?>"><?php the_field('area_central'); ?></a>
                     <div class="nomes" id="area_central">
                         <?php
                             $term = get_field('area_central');
@@ -83,7 +98,12 @@
                     </div>
                 </div>
                 <div class="area_inferior" onmouseover="showContent('area_inferior', 'over');" onmouseleave="showContent('area_inferior', 'leave');">
-                    <?php the_field('area_inferior'); ?>
+                    <?php 
+                        $inferior_id = get_field('pagina_area_inferior');
+                        $post_inferior = get_post($inferior_id); 
+                        $slug = $post_inferior->post_name;
+                    ?>
+                    <a href="<?php bloginfo('url'); ?>/<?php echo $slug;?>"><?php the_field('area_inferior'); ?></a>
                     <span ><?php the_field('subtitulo_area_inferior'); ?></span>
                     <div class="nomes" id="area_inferior">
                         <?php
@@ -120,7 +140,7 @@
             target.classList.add('active');
             var element = document.getElementsByClassName(area);
             var elementRef = element[0].getBoundingClientRect();
-            elementTop = elementRef.top - target.getBoundingClientRect().height;
+            elementTop = elementRef.top - target.getBoundingClientRect().height - 10;
             elementLeft = (elementRef.left - (target.getBoundingClientRect().width / 2)) + (elementRef.width / 2);
             target.style.top = elementTop + 'px';
             target.style.left = elementLeft + 'px';

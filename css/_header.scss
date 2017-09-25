@@ -104,6 +104,7 @@
 
             li {
                 @include display-flex;
+                position: relative;
                 flex-grow: 1;
                 height: 100%;
                 transition: ease 0.2s;
@@ -123,11 +124,41 @@
 
                 &:hover {
                     background-color: $greenDarker;
+
+                    .sub-menu {
+                        display: flex;
+                        position: absolute;
+                        top: 35px;
+                        left: 0;
+                        flex-wrap: wrap;
+                        height: auto;
+                        z-index: 2;
+
+                        li {
+                            &:hover {
+                                background-color: $green;
+                            }
+                        }
+                    }
                 }
 
                 &:last-child {
                     a {
                         border: none;
+                    }
+                }
+            }
+
+            .sub-menu {
+                display: none;
+
+                li {
+                    padding: 10px;
+                    border-bottom: 1px solid $white;
+                    background-color: $greenDarker;
+
+                    a {
+                        border-right: none;
                     }
                 }
             }

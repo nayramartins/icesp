@@ -23,8 +23,13 @@ $title = get_the_title();
             get_post_field( 'post_name', get_post() ) == 'research-program' ) : 
         ?>
             <li><?php pll_e( 'Pesquisa' ); ?></li>
-            <?php $post1 = get_post(128); ?>
-            <?php $post2 = get_post(130); ?>
+            <?php 
+                $lang = pll_current_language();
+                $post1_id = $lang == 'en' ? 166 : 128;
+                $post2_id = $lang == 'en' ? 163 : 130;
+                $post1 = get_post($post1_id);
+                $post2 = get_post($post2_id); 
+            ?>
             <li><a href="<?php echo get_permalink(128); ?>"><?php pll_e( $post1->post_title ); ?></a></li>
             <li><a href="<?php echo get_permalink(130); ?>"><?php pll_e( $post2->post_title ); ?></a></li>
         <?php endif; ?>

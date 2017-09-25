@@ -1,0 +1,43 @@
+.mapa {
+    width: 100%;
+
+    .country-tooltip {
+        display: none;
+        position: fixed;
+        flex-wrap: wrap;
+        padding: 20px;
+        border-radius: 5px;
+        background: $blueOpacity;
+        color: $white;
+
+        h3 {
+            width: 100%;
+            margin: 0 0 15px;
+            font-size: 16px;
+        }
+
+        a {
+            color: $white;
+            font-size: 14px;
+            text-decoration: none;
+        }
+
+        &.active {
+            display: flex;
+        }
+    }
+
+    .close-button {
+        position: absolute;
+        top: -5px;
+        right: -7px;
+        width: 20px;
+        padding: 0 6px;
+        border-radius: 10px;
+        background: $white;
+        color: $blue;
+        line-height: 20px;
+        cursor: pointer;
+        box-sizing: border-box;
+    }
+}
